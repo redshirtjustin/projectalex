@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'section/:section', to: 'stories#index', as: :section
+
   resources :stories
 
   get 'tags/:tag', to: 'atoms#index', as: :tags

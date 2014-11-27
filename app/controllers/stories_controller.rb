@@ -5,8 +5,11 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
-
+    if params[:section]
+      @stories = Story.where({section_id: params[:section]})
+    else
+      @stories = Story.all
+    end
   end
 
   # GET /stories/1

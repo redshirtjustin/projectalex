@@ -1,5 +1,15 @@
 <h1>Listing stories</h1>
 
+<p><%= link_to 'New Story', new_story_path %></p>
+  
+<div>
+    Filter by section: 
+    <%= link_to "Stories List", stories_path() %>
+  <% @sections.each do |section| %>
+    <%= link_to section.sec_name, section_path(section.id) %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -35,5 +45,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Story', new_story_path %>
