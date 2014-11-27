@@ -1,0 +1,39 @@
+<h1>Listing stories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Pipeline</td>
+      <td>*</td>
+      <td>Head Line</td>
+      <td>Lead Line</td>
+      <td>Section</td>
+      <td>Priority</td>
+      <td>Age</td>
+      <td>Last Updated</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.pipeline.pip_name %></td> 
+        <td><%= image_tag(story.thumb_url) %></td>
+        <td><%= link_to story.headline, story%></td>
+        <td><%= story.leadline%></td>
+        <td><%= story.section.sec_name%></td>
+        <td><%= story.priority.pri_name%></td>
+        <td><%= distance_of_time_in_words_to_now(story.created_at) %></td>
+        <td><%= distance_of_time_in_words_to_now(story.updated_at) %></td>
+        <td><%= link_to 'Show', story %></td>
+        <td><%= link_to 'Edit', edit_story_path(story) %></td>
+        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story', new_story_path %>

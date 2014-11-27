@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stories
+
   get 'tags/:tag', to: 'atoms#index', as: :tags
 
   resources :atoms

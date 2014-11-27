@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  headline: MyString
+  leadline: MyString
+  shortline: MyString
+  mast_url: MyString
+  thumb_url: MyString
+  section_id: 
+  priority_id: 
+  pipeline_id: 
+
+two:
+  headline: MyString
+  leadline: MyString
+  shortline: MyString
+  mast_url: MyString
+  thumb_url: MyString
+  section_id: 
+  priority_id: 
+  pipeline_id: 

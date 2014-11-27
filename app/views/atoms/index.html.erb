@@ -5,10 +5,11 @@
 		<%= link_to tag.name, tags_path(tag.name), class: css_class %>
 	<% end %>
 </div>
-
+<br>
 <%= link_to 'New Atom', new_atom_path %>
-
-<table>
+<br>
+<br>
+<table id="atom_stack">
   <tbody>
 
 <%= render @atoms %>

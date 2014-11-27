@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Headline:</strong>
+  <%= @story.headline %>
+</p>
+
+<p>
+  <strong>Leadline:</strong>
+  <%= @story.leadline %>
+</p>
+
+<p>
+  <strong>Shortline:</strong>
+  <%= @story.shortline %>
+</p>
+
+<p>
+  <strong>Mast url:</strong>
+  <%= @story.mast_url %>
+</p>
+
+<p>
+  <strong>Thumb url:</strong>
+  <%= @story.thumb_url %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @story.section.sec_name %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @story.priority.pri_name %>
+</p>
+
+<p>
+  <strong>Pipeline:</strong>
+  <%= @story.pipeline.pip_name %>
+</p>
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>

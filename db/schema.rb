@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127052409) do
+ActiveRecord::Schema.define(version: 20141127092426) do
 
   create_table "atoms", force: true do |t|
     t.text     "content"
@@ -35,6 +35,41 @@ ActiveRecord::Schema.define(version: 20141127052409) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pipelines", force: true do |t|
+    t.string   "pip_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "priorities", force: true do |t|
+    t.string   "pri_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", force: true do |t|
+    t.string   "sec_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", force: true do |t|
+    t.string   "headline"
+    t.text     "leadline"
+    t.string   "shortline"
+    t.string   "mast_url"
+    t.string   "thumb_url"
+    t.integer  "section_id"
+    t.integer  "priority_id"
+    t.integer  "pipeline_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stories", ["pipeline_id"], name: "index_stories_on_pipeline_id"
+  add_index "stories", ["priority_id"], name: "index_stories_on_priority_id"
+  add_index "stories", ["section_id"], name: "index_stories_on_section_id"
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

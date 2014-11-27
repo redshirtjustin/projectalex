@@ -1,0 +1,49 @@
+<%= form_for(@story) do |f| %>
+  <% if @story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+      <% @story.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :headline %><br>
+    <%= f.text_field :headline, size: 50 %>
+  </div>  
+  <div class="field">
+    <%= f.label :shortline %><br>
+    <%= f.text_field :shortline, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :leadline %><br>
+    <%= f.text_area :leadline, size: "50x10" %>
+  </div>
+  <div class="field">
+    <%= f.label :mast_url %><br>
+    <%= f.text_field :mast_url, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :thumb_url %><br>
+    <%= f.text_field :thumb_url, size: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id %><br>
+    <%= f.collection_select(:section_id, @sections, :id, :sec_name) %>
+  </div>
+  <div class="field">
+    <%= f.label :priority_id %><br>
+    <%= f.collection_select(:priority_id, @priorities, :id, :pri_name) %>
+  </div>
+  <div class="field">
+    <%= f.label :pipeline_id %><br>
+    <%= f.collection_select(:pipeline_id, @pipelines, :id, :pip_name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,52 +1,27 @@
     <tr>
-      <td>Content:</td>
-      <td colspan="2"><%= atom.content %></td>
+      <td colspan="3">Tags: <%= raw atom.tag_list.map { |t| link_to t, tags_path(t)}.join(', ') %></td>
+    </tr> 
+
+    <tr>
+      <td rowspan="4">Content: <%= atom.content %></td>
+      <td>Quote: <%= atom.quote %></td>
+      <td>Image: <%= image_tag(atom.img_url) %></td>
     </tr>
 
     <tr>
-      <td>Tags:</td>
-      <td colspan="2"><%= raw atom.tag_list.map { |t| link_to t, tags_path(t)}.join(', ') %></td>
+      <td>Quoted name: <%= atom.quoted_name %></td>
+      <td>Image caption: <%= atom.img_caption %></td>
     </tr>
 
     <tr>
-      <td>Quote:</td>
-      <td colspan="2"><%= atom.quote %></td>
+      <td>Quoted title: <%= atom.quoted_title %></td>
+      <td>Image citation: <%= atom.img_citation %></td>
     </tr>
 
     <tr>
-      <td>Quoted name:</td>
-      <td colspan="2"><%= atom.quoted_name %></td>
-    </tr>
-
-    <tr>
-      <td>Quoted title:</td>
-      <td colspan="2"><%= atom.quoted_title %></td>
-    </tr>
-
-    <tr>
-      <td>Quoted org:</td>
-      <td colspan="2"><%= atom.quoted_org %></td>
-    </tr>
-
-    <tr>
-      <td>Image:</td>
-      <td colspan="2"><%= atom.img_url %></td>
-    </tr>
-    
-    <tr>
-      <td>Image caption:</td>
-      <td colspan="2"><%= atom.img_caption %></td>
-    </tr>
-
-    <tr>
-      <td>Image citation:</td>
-      <td colspan="2"><%= atom.img_citation %></td>
-    </tr>
-
-    <tr>
-      <td>Image location:</td>
-      <td colspan="2"><%= atom.img_location %></td>
-    </tr>
+      <td>Quoted org: <%= atom.quoted_org %></td>
+      <td>Image location: <%= atom.img_location %></td>
+    </tr>  
 
     <tr>
       <td colspan="3"><%= link_to_unless_current "Show", { controller: "atoms", action: "show", id: atom.id } %> <%= link_to 'Edit', edit_atom_path(atom) %> <%= link_to 'Destroy', atom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
