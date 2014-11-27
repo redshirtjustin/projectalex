@@ -1,0 +1,17 @@
+<h1>Listing atoms</h1>
+
+<div id="tag_cloud">
+	<% tag_cloud(Atom.tag_counts_on(:tags), %w(s m l)) do |tag, css_class| %>
+		<%= link_to tag.name, tags_path(tag.name), class: css_class %>
+	<% end %>
+</div>
+
+<%= link_to 'New Atom', new_atom_path %>
+
+<table>
+  <tbody>
+
+<%= render @atoms %>
+
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs_to: 
+  citation_url: MyString
+  citation_source: MyString
+  citation_date: MyString
+
+two:
+  belongs_to: 
+  citation_url: MyString
+  citation_source: MyString
+  citation_date: MyString
