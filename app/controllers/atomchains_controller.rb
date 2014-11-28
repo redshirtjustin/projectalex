@@ -1,0 +1,2 @@
+class AtomchainsController < ApplicationController
+end

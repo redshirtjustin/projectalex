@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127092426) do
+ActiveRecord::Schema.define(version: 20141128033616) do
+
+  create_table "atomchains", force: true do |t|
+    t.integer  "story_id"
+    t.integer  "atom_id"
+    t.boolean  "active",     default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "atomchains", ["atom_id"], name: "index_atomchains_on_atom_id"
+  add_index "atomchains", ["story_id"], name: "index_atomchains_on_story_id"
 
   create_table "atoms", force: true do |t|
     t.text     "content"
