@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128044448) do
+ActiveRecord::Schema.define(version: 20141204111953) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20141128044448) do
     t.string   "img_location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "display_date"
   end
 
   create_table "citations", force: true do |t|
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20141128044448) do
     t.integer  "pipeline_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "subject"
   end
 
   add_index "stories", ["pipeline_id"], name: "index_stories_on_pipeline_id"

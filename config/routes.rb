@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :atoms
 
+  namespace :api, defaults: {format: :json} do
+    resources :stories, :sections, :priorities, :pipelines, only: [:index, :show]
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

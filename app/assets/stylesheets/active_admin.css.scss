@@ -10,8 +10,159 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+#index_footer {
+  clear: both;
+}
+
+.chip {
+	width: 200px;
+	margin: 2px;
+	border: 1px solid grey;
+	padding: 7px;
+  border-radius: 0px;
+
+  background: whitesmoke;
+  float: left;
+  display: inline-block;
+}
+
+.content {
+  margin: 2px;
+  font-size: 1.1em;
+  font-family: 'Merriweather', serif;
+  text-align: left;
+}
+
+.attribution {
+  margin: 2px;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.quote {
+  margin: 2px;
+  font-size: 1.1em;
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  text-align: left;
+}
+
+.last_updated       { background: #8DAA92; color: white; border-color: darkgreen; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;
+                      padding: 2px;
+                      display: inline-block;
+                      margin: 1px;
+                      font-family: 'Open Sans', sans-serif;
+}
+
+.age                { background: #8DAA92; color: white; border-color: darkgreen; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;
+                      padding: 1px;
+                      display: inline-block;
+                      margin: 1px;
+                      font-family: 'Open Sans', sans-serif;
+}
+
+.tag                { background: #FF8C00; color: white; border-color: brown; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;
+                      padding: 1px;
+                      display: inline-block;
+                      margin: 1px;
+                      font-family: 'Open Sans', sans-serif;
+
+}
+
+
+.status_tag           {background: tomato; color: peachpuff; border-color: navy; 
+                        border-style: solid; 
+                        border-width: 1px; 
+                        border-radius: 3px;}
+
+.status_tag {
+
+
+	&.completed			 	{background: #8DAA92; color: white; border-color: darkgreen; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;
+                    }
+  &.new, &.development {background: #1E90FF; color: white; border-color: navy; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;
+                    }
+
+  &.awaiting_approval 	{background: #FF8C00; color: firebrick; border-color: firebrick; 
+                          border-style: solid; 
+                          border-width: 1px; 
+                          border-radius: 3px;}
+
+  &.active 				       {background: #8DEA00; color: white; border-color: navy; 
+                          border-style: solid; 
+                          border-width: 1px; 
+                          border-radius: 3px;}
+
+  &.inactive 				     {background: #dbd6d6; color: black; border-color: black; 
+                          border-style: solid; 
+                          border-width: 1px; 
+                          border-radius: 3px;}
+
+  &.developing			{background: #FF8C00; color: white; border-color: navy; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;}
+
+  &.happening				{background: #FF8C00; color: white; border-color: navy; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;}
+
+  &.breaking_news		{background: #E60000; color: white; border-color: navy; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;}
+
+  &.no_priority, &.none			{background: #778899; color: whitesmoke; border-color: navy; 
+                      border-style: solid; 
+                      border-width: 1px; 
+                      border-radius: 3px;}
+}
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+#story_show span {
+  margin: 0px;
+  font-size: 1.2em;
+  font-family: 'Merriweather', serif;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+#story_show div {
+  margin: 10px;
+  font-size: 1.2em;
+  font-family: 'Merriweather', serif;
+  text-align: left;
+}

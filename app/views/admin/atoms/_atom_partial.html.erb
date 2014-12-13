@@ -1,0 +1,15 @@
+<div class="chip">
+    <%= resource_selection_cell %>
+    <span><%= link_to "Edit # #{atom.id}", edit_admin_atom_path(atom) %></span>
+    <span><%= link_to "View # #{atom.id}", admin_atom_path(atom) %></span>
+  <% if !atom.quote.blank? %>
+    <div class="quote"><%= atom.quote %></div>
+    <span class="attribution"><%= "#{atom.quoted_name} #{atom.quoted_title} #{atom.quoted_org}" %></span>
+  <% elsif !atom.img_url.blank? %>
+    <div><%= image_tag img_url %></div>
+  <% end %>  
+    <div class="content"><%= atom.content %></div>
+    <span class="last_updated"><%= "Updated: #{distance_of_time_in_words_to_now(atom.updated_at)}" %></span>
+    <span class="age"><%= "Age: #{distance_of_time_in_words_to_now(atom.created_at)}" %></span>
+    <% atom.tag_list %>
+</div>
